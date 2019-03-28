@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terraform Enterprise&#x27;s free accounts, now in closed beta, offer unlimited Terraform state storage for you and your colleagues.">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/images/favicons/apple-touch-icon-13180a24.png">
+    <link rel="icon" type="image/png" href="../../../assets/images/favicons/favicon-32x32-62171ffd.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../../../assets/images/favicons/favicon-16x16-2821bcc8.png" sizes="16x16">
+    <link rel="manifest" href="/android-manifest.json">
+    <link rel="mask-icon" href="../../../assets/images/favicons/safari-pinned-tab-bab846e1.svg" color="#5C4EE5">
+    <meta name="msapplication-config" content="/microsoft-tile.xml" />
+    <meta name="theme-color" content="#ffffff">
+    
+      <meta name="twitter:card" content="summary" />
+      <meta property="og:image" content="/../../../assets/images/og-image-8b3e4f7d.png"/>
+      <meta property="og:image:width" content="100"/>
+      <meta property="og:image:height" content="100"/>
+    <meta name="twitter:site" content="@HashiCorp" />
+    <meta name="twitter:creator" content="@HashiCorp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="/docs/enterprise/free/index.html" />
+    <meta property="og:title" content="Getting Started - Free Tier - Terraform Enterprise - Terraform by HashiCorp" />
+    <meta property="og:site_name" content="Terraform by HashiCorp"/>
+    <meta property="og:description" content="Terraform Enterprise&#x27;s free accounts, now in closed beta, offer unlimited Terraform state storage for you and your colleagues." />
+
+    <title>Getting Started - Free Tier - Terraform Enterprise - Terraform by HashiCorp</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://use.typekit.net/wxf7mfi.css">
+    <link href="../../../assets/stylesheets/application-06344df3.css" rel="stylesheet" />
+
+    <!-- Site scripts -->
+    <!--[if lt IE 9]><script src="../../../assets/javascripts/ie-compat-c141a02d.js" defer="defer"></script><![endif]-->
+    <script src="../../../assets/javascripts/application-e080fe63.js" defer="defer"></script>
+
+    <!-- Analytics scrpts -->
+    <script defer>
+      !function(){var e=window.analytics=window.analytics||[];if(!e.initialize)if(e.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{e.invoked=!0,e.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"],e.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),e.push(a),e}};for(var t=0;t<e.methods.length;t++){var a=e.methods[t];e[a]=e.factory(a)}e.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+e+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(t,a)},e.SNIPPET_VERSION="4.0.0",e.load("")}}();var om597a24292a958,om597a24292a958_poll=function(){var e=0;return function(t,a){clearInterval(e),e=setInterval(t,a)}}();!function(e,t,a){if(e.getElementById(a))om597a24292a958_poll(function(){if(window.om_loaded&&!om597a24292a958)return(om597a24292a958=new OptinMonsterApp).init({s:"35109.597a24292a958",staging:0,dev:0,beta:0})},25);else{var n=!1,o=e.createElement("script");o.id=a,o.src="//a.optnmstr.com/app/js/api.min.js",o.async=!0,o.onload=o.onreadystatechange=function(){if(!(n||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState))try{n=om_loaded=!0,(om597a24292a958=new OptinMonsterApp).init({s:"35109.597a24292a958",staging:0,dev:0,beta:0}),o.onload=o.onreadystatechange=null}catch(e){}},(document.getElementsByTagName("head")[0]||document.documentElement).appendChild(o)}}(document,0,"omapi-script");
+    </script>
+
+    
+  </head>
+
+  <body id="page-docs-free-gettingstarted" class="layout-free page-getting-started-free-tier-terraform-enterprise">
+
+    <svg class="hidden-print" aria-hidden="true" style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <symbol id="mega-nav-icon-angle" viewBox="0 0 13 7">
+      <polygon points="6.5,6.5 0.7,1.6 1.3,0.8 6.5,5.2 11.7,0.8 12.3,1.6 "/>
+    </symbol>
+    <symbol id="mega-nav-icon-close" viewBox="0 0 13 15">
+      <path vector-effect="non-scaling-stroke" d="M1.1 14L11.9 1M11.9 14L1.1 1"/>
+    </symbol>
+  </defs>
+</svg>
+<div class="hidden-print mega-nav-sandbox">
+  <div class="mega-nav-banner">
+    <div class="container">
+      <div class="mega-nav-banner-item">
+        <a class="mega-nav-banner-logo" href="https://www.hashicorp.com"><img src="../../../assets/images/mega-nav/logo-hashicorp-wordmark-bbed0e8a.svg" alt="HashiCorp Logo" /></a>
+      </div>
+      <div class="mega-nav-banner-item">
+        <p class="mega-nav-tagline"><span class="visible-xs text-muted">Learn the</span><span class="hidden-xs text-muted">Learn how Terraform fits into the</span></p>
+        <div id="#mega-nav" class="mega-nav">
+          <button type="button" id="mega-nav-ctrl" class="mega-nav-ctrl">
+            <div class="mega-nav-ctrl-items">
+              <img src="../../../assets/images/mega-nav/logo-hashicorp-a66fda95.svg" alt="HashiCorp Logo" />
+              <strong>HashiCorp Suite</strong>
+              <span class="mega-nav-icon-outline">
+                <svg class="mega-nav-icon mega-nav-icon-angle-right" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mega-nav-icon-angle"></use></svg><span class="visuallyhidden">Open</span>
+              </span>
+            </div>
+          </button>
+          <div id="mega-nav-body-ct" class="mega-nav-body-ct" aria-labelledby="mega-nav-ctrl">
+            <div class="mega-nav-body">
+              <button type="button" id="mega-nav-close" class="mega-nav-close"><svg class="mega-nav-icon mega-nav-icon-close" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mega-nav-icon-close"></use></svg><span class="visuallyhidden">Close</span></button>
+              <div class="mega-nav-body-header">
+                <div class="mega-nav-body-header-item">
+                  <h2 class="mega-nav-h1">Provision, Secure, Connect, and&nbsp;Run</h2>
+                  <p class="mega-nav-h2">Any infrastructure for any&nbsp;application</p>
+                </div>
+                <div class="mega-nav-body-header-item">
+                  <a href="https://www.hashicorp.com/" class="mega-nav-btn"><img src="../../../assets/images/mega-nav/logo-hashicorp-a66fda95.svg" alt="HashiCorp Logo" /> Learn the HashiCorp Enterprise&nbsp;Suite <svg class="mega-nav-icon mega-nav-icon-angle-right" aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mega-nav-icon-angle"></use></svg></a>
+                </div>
+              </div>
+              <div class="mega-nav-body-grid">
+                <div class="mega-nav-body-grid-item">
+                  <h3 class="mega-nav-h3">Provision</h3>
+                  <ul class="mega-nav-grid">
+                    <li>
+                      <a href="https://www.vagrantup.com" class="mega-nav-grid-item mega-nav-grid-item-vagrant">
+                        <div class="mega-nav-grid-item-img">
+                          <img src="../../../assets/images/mega-nav/logo-vagrant-a7ab5898.svg" alt="Vagrant Logo" />
+                        </div>
+                        <b>Vagrant</b>
+                        <ul>
+                          <li><span class="mega-nav-tag">Build</span></li>
+                          <li><span class="mega-nav-tag">Test</span></li>
+                        </ul>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.packer.io" class="mega-nav-grid-item mega-nav-grid-item-packer">
+                        <div class="mega-nav-grid-item-img">
+                          <img src="../../../assets/images/mega-nav/logo-packer-cb3b9b94.svg" alt="Packer Logo" />
+                        </div>
+                        <b>Packer</b>
+                        <ul>
+                          <li><span class="mega-nav-tag">Package</span></li>
+                        </ul>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.terraform.io" class="mega-nav-grid-item mega-nav-grid-item-terraform">
+                        <div class="mega-nav-grid-item-img">
+                          <img src="../../../assets/images/mega-nav/logo-terraform-ff69eaae.svg" alt="Terraform Logo" />
+                        </div>
+                        <b>Terraform</b>
+                        <ul>
+                          <li><span class="mega-nav-tag">Provision</span></li>
+                        </ul>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mega-nav-body-grid-item">
+                  <h3 class="mega-nav-h3">Secure</h3>
+                  <ul class="mega-nav-grid">
+                    <li>
+                      <a href="https://www.vaultproject.io" class="mega-nav-grid-item mega-nav-grid-item-vault">
+                        <div class="mega-nav-grid-item-img">
+                          <img src="../../../assets/images/mega-nav/logo-vault-0f83e3d2.svg" alt="Vault Logo" />
+                        </div>
+                        <b>Vault</b>
+                        <ul>
+                          <li><span class="mega-nav-tag">Secure</span></li>
+                        </ul>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mega-nav-body-grid-item">
+                  <h3 class="mega-nav-h3">Connect</h3>
+                  <ul class="mega-nav-grid">
+                    <li>
+                      <a href="https://www.consul.io" class="mega-nav-grid-item mega-nav-grid-item-consul">
+                        <div class="mega-nav-grid-item-img">
+                          <img src="../../../assets/images/mega-nav/logo-consul-c77f6844.svg" alt="Consul Logo" />
+                        </div>
+                        <b>Consul</b>
+                        <ul>
+                          <li><span class="mega-nav-tag">Connect</span></li>
+                        </ul>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mega-nav-body-grid-item">
+                  <h3 class="mega-nav-h3">Run</h3>
+                  <ul class="mega-nav-grid">
+                    <li>
+                      <a href="https://www.nomadproject.io" class="mega-nav-grid-item mega-nav-grid-item-nomad">
+                        <div class="mega-nav-grid-item-img">
+                          <img src="../../../assets/images/mega-nav/logo-nomad-c4c148be.svg" alt="Nomad Logo" />
+                        </div>
+                        <b>Nomad</b>
+                        <ul>
+                          <li><span class="mega-nav-tag">Run</span></li>
+                        </ul>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mega-nav-body-footer">
+                <p>Seven elements of the modern Application Lifecycle</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div id="header" class="navigation navbar-static-top hidden-print">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="navbar-header">
+              <div class="navbar-brand">
+                <a href="/">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 251 61" class="logo" height="50">
+  <path class="text" fill="#000" fill-rule="nonzero" d="M81.78 19.54h-8.89v-5.31H96.7v5.31h-8.9v26.53h-6"></path>
+  <path class="text" fill="#000" fill-rule="nonzero" d="M102.19 41.77c2.415-.012 4.814-.383 7.12-1.1l.91 4.4c-2.745.99-5.642 1.49-8.56 1.48-7.31 0-9.85-3.39-9.85-9V31.4c0-4.92 2.2-9.08 9.66-9.08s9.13 4.35 9.13 9.37v5h-13v1.2c.05 2.78 1.05 3.88 4.59 3.88zM97.65 32h7.41v-1.18c0-2.2-.67-3.73-3.54-3.73s-3.87 1.53-3.87 3.73V32zm28.54-4.33c-2.148.97-4.217 2.102-6.19 3.39v15h-5.83V22.79h4.92l.38 2.58c1.897-1.284 3.955-2.313 6.12-3.06l.6 5.36zm14.24 0c-2.14.97-4.204 2.103-6.17 3.39v15h-5.83V22.79h4.92l.38 2.58c1.897-1.284 3.955-2.313 6.12-3.06l.58 5.36zm19.51 18.4h-4.78l-.43-1.58c-2.062 1.342-4.47 2.058-6.93 2.06-4.25 0-6.07-2.92-6.07-6.93 0-4.73 2.06-6.55 6.79-6.55h5.59v-2.44c0-2.58-.72-3.49-4.45-3.49-2.17.024-4.33.266-6.45.72l-.72-4.45c2.606-.72 5.296-1.09 8-1.1 7.31 0 9.47 2.58 9.47 8.41l-.02 15.35zm-5.83-8.8h-4.3c-1.91 0-2.44.53-2.44 2.29s.53 2.34 2.34 2.34c1.544-.024 3.058-.436 4.4-1.2v-3.43zm23.75-19.79c-1.1-.237-2.224-.364-3.35-.38-2.29 0-2.63 1-2.63 2.77v2.92h5.93l-.33 4.64h-5.59v18.64h-5.83V27.43h-3.73v-4.64h3.73v-3.25c0-4.83 2.25-7.22 7.41-7.22 1.69-.006 3.372.22 5 .67l-.61 4.49zm11.38 29.07c-8 0-10.13-4.4-10.13-9.18v-5.88c0-4.78 2.15-9.18 10.13-9.18s10.13 4.4 10.13 9.18v5.88c.01 4.78-2.15 9.18-10.13 9.18zm0-19.27c-3.11 0-4.3 1.39-4.3 4v6.26c0 2.63 1.2 4 4.3 4 3.1 0 4.3-1.39 4.3-4V31.3c0-2.63-1.19-4.02-4.3-4.02zm25.14.39c-2.14.97-4.204 2.103-6.17 3.39v15h-5.83V22.79h4.92l.38 2.58c1.897-1.284 3.954-2.313 6.12-3.06l.58 5.36zm16.02 18.4V29.82c0-1.24-.53-1.86-1.86-1.86-2.137.254-4.2.934-6.07 2v16.11h-5.83V22.79h4.45l.57 2c2.906-1.47 6.088-2.315 9.34-2.48 1.843-.174 3.6.82 4.4 2.49 2.91-1.49 6.104-2.34 9.37-2.49 3.87 0 5.26 2.72 5.26 6.88v16.88h-5.83V29.82c0-1.24-.53-1.86-1.86-1.86-2.14.236-4.208.917-6.07 2v16.11h-5.87z"></path>
+  <path class="rect-dark" fill="#4040B2" d="M36.4 39.13l16.4-9.46V10.72L36.4 20.2"></path>
+  <path class="rect-light" fill="#5C4EE5" d="M18.2 10.72l16.4 9.48v18.93l-16.4-9.47"></path>
+  <path class="rect-light" fill="#5C4EE5" d="M0 19.09l16.4 9.47V9.62L0 .15m18.2 50.53l16.4 9.47V41.21l-16.4-9.47"></path>
+</svg>
+
+                </a>
+              </div>
+              <button class="navbar-toggle" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="buttons hidden-xs">
+              <nav class="navigation-links" role="navigation">
+                <ul class="main-links nav navbar-nav navbar-right">
+                  <li><a href="/intro/index.html">Intro</a></li>
+                  <li><a href="https://learn.hashicorp.com/terraform/">Learn</a></li>
+                  <li><a href="/docs/index.html">Docs</a></li>
+                  <li><a href="/guides/index.html">Guides</a></li>
+                  <li><a href="/docs/extend/index.html">Extend</a></li>
+                  <li><a href="https://www.hashicorp.com/products/terraform/?utm_source=oss&utm_medium=header-nav&utm_campaign=terraform">Enterprise</a></li>
+                  <li>
+                    <a href="/downloads.html">
+                      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewbox="0 0 28 28" enable-background="new 0 0 28 28" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+  <path d="M28 0H0v28h28V0zM13.8 22.9L7 17.3l2-2.4 3.2 2.6V7h3.2v10.5l3.2-2.6 2 2.4L13.8 22.9z"></path>
+</svg>
+ Download
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/hashicorp/terraform">
+                      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewbox="0 0 28 28" enable-background="new 0 0 28 28" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+  <path d="M28 0H0v28h11.4c0 0 0-1.3 0-2.4C7.7 26.4 7 23.9 7 23.9 6.4 22.4 5.5 22 5.5 22c-1.2-0.8 0.1-0.8 0.1-0.8 1.3 0.1 2 1.4 2 1.4 1.2 2 3 1.4 3.8 1.1 0.1-0.8 0.5-1.4 0.9-1.8 -2.9-0.3-6-1.5-6-6.5 0-1.4 0.5-2.6 1.3-3.5C7.5 11.5 7 10.2 7.8 8.4c0 0 1.1-0.4 3.6 1.3 1-0.3 2.2-0.4 3.3-0.4 1.1 0 2.2 0.2 3.3 0.4 2.5-1.7 3.6-1.3 3.6-1.3 0.7 1.8 0.3 3.1 0.1 3.5 0.8 0.9 1.3 2.1 1.3 3.5 0 5-3.1 6.1-6 6.5 0.5 0.4 0.9 1.2 0.9 2.4 0 1.8 0 3.7 0 3.7H28V0z"></path>
+</svg>
+ GitHub
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-overlay"></div>
+
+<aside class="sidebar" role="navigation">
+  <div class="sidebar-header">
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 251 61" class="logo" height="42">
+  <path class="text" fill="#000" fill-rule="nonzero" d="M81.78 19.54h-8.89v-5.31H96.7v5.31h-8.9v26.53h-6"></path>
+  <path class="text" fill="#000" fill-rule="nonzero" d="M102.19 41.77c2.415-.012 4.814-.383 7.12-1.1l.91 4.4c-2.745.99-5.642 1.49-8.56 1.48-7.31 0-9.85-3.39-9.85-9V31.4c0-4.92 2.2-9.08 9.66-9.08s9.13 4.35 9.13 9.37v5h-13v1.2c.05 2.78 1.05 3.88 4.59 3.88zM97.65 32h7.41v-1.18c0-2.2-.67-3.73-3.54-3.73s-3.87 1.53-3.87 3.73V32zm28.54-4.33c-2.148.97-4.217 2.102-6.19 3.39v15h-5.83V22.79h4.92l.38 2.58c1.897-1.284 3.955-2.313 6.12-3.06l.6 5.36zm14.24 0c-2.14.97-4.204 2.103-6.17 3.39v15h-5.83V22.79h4.92l.38 2.58c1.897-1.284 3.955-2.313 6.12-3.06l.58 5.36zm19.51 18.4h-4.78l-.43-1.58c-2.062 1.342-4.47 2.058-6.93 2.06-4.25 0-6.07-2.92-6.07-6.93 0-4.73 2.06-6.55 6.79-6.55h5.59v-2.44c0-2.58-.72-3.49-4.45-3.49-2.17.024-4.33.266-6.45.72l-.72-4.45c2.606-.72 5.296-1.09 8-1.1 7.31 0 9.47 2.58 9.47 8.41l-.02 15.35zm-5.83-8.8h-4.3c-1.91 0-2.44.53-2.44 2.29s.53 2.34 2.34 2.34c1.544-.024 3.058-.436 4.4-1.2v-3.43zm23.75-19.79c-1.1-.237-2.224-.364-3.35-.38-2.29 0-2.63 1-2.63 2.77v2.92h5.93l-.33 4.64h-5.59v18.64h-5.83V27.43h-3.73v-4.64h3.73v-3.25c0-4.83 2.25-7.22 7.41-7.22 1.69-.006 3.372.22 5 .67l-.61 4.49zm11.38 29.07c-8 0-10.13-4.4-10.13-9.18v-5.88c0-4.78 2.15-9.18 10.13-9.18s10.13 4.4 10.13 9.18v5.88c.01 4.78-2.15 9.18-10.13 9.18zm0-19.27c-3.11 0-4.3 1.39-4.3 4v6.26c0 2.63 1.2 4 4.3 4 3.1 0 4.3-1.39 4.3-4V31.3c0-2.63-1.19-4.02-4.3-4.02zm25.14.39c-2.14.97-4.204 2.103-6.17 3.39v15h-5.83V22.79h4.92l.38 2.58c1.897-1.284 3.954-2.313 6.12-3.06l.58 5.36zm16.02 18.4V29.82c0-1.24-.53-1.86-1.86-1.86-2.137.254-4.2.934-6.07 2v16.11h-5.83V22.79h4.45l.57 2c2.906-1.47 6.088-2.315 9.34-2.48 1.843-.174 3.6.82 4.4 2.49 2.91-1.49 6.104-2.34 9.37-2.49 3.87 0 5.26 2.72 5.26 6.88v16.88h-5.83V29.82c0-1.24-.53-1.86-1.86-1.86-2.14.236-4.208.917-6.07 2v16.11h-5.87z"></path>
+  <path class="rect-dark" fill="#4040B2" d="M36.4 39.13l16.4-9.46V10.72L36.4 20.2"></path>
+  <path class="rect-light" fill="#5C4EE5" d="M18.2 10.72l16.4 9.48v18.93l-16.4-9.47"></path>
+  <path class="rect-light" fill="#5C4EE5" d="M0 19.09l16.4 9.47V9.62L0 .15m18.2 50.53l16.4 9.47V41.21l-16.4-9.47"></path>
+</svg>
+
+  </div>
+
+  <ul class="nav sidebar-nav">
+    <li><a href="/intro/index.html">Intro</a></li>
+    <li><a href="https://learn.hashicorp.com/terraform/">Learn</a></li>
+    <li><a href="/docs/index.html">Docs</a></li>
+    <li><a href="/guides/index.html">Guides</a></li>
+    <li><a href="/docs/extend/index.html">Extend</a></li>
+    <li><a href="https://www.hashicorp.com/products/terraform/?utm_source=oss&utm_medium=header-nav&utm_campaign=terraform">Enterprise</a></li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <ul class="external nav sidebar-nav">
+    <li>
+      <a href="/downloads.html">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewbox="0 0 28 28" enable-background="new 0 0 28 28" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+  <path d="M28 0H0v28h28V0zM13.8 22.9L7 17.3l2-2.4 3.2 2.6V7h3.2v10.5l3.2-2.6 2 2.4L13.8 22.9z"></path>
+</svg>
+ Download
+      </a>
+    </li>
+    <li>
+      <a href="https://github.com/hashicorp/terraform">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewbox="0 0 28 28" enable-background="new 0 0 28 28" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+  <path d="M28 0H0v28h11.4c0 0 0-1.3 0-2.4C7.7 26.4 7 23.9 7 23.9 6.4 22.4 5.5 22 5.5 22c-1.2-0.8 0.1-0.8 0.1-0.8 1.3 0.1 2 1.4 2 1.4 1.2 2 3 1.4 3.8 1.1 0.1-0.8 0.5-1.4 0.9-1.8 -2.9-0.3-6-1.5-6-6.5 0-1.4 0.5-2.6 1.3-3.5C7.5 11.5 7 10.2 7.8 8.4c0 0 1.1-0.4 3.6 1.3 1-0.3 2.2-0.4 3.3-0.4 1.1 0 2.2 0.2 3.3 0.4 2.5-1.7 3.6-1.3 3.6-1.3 0.7 1.8 0.3 3.1 0.1 3.5 0.8 0.9 1.3 2.1 1.3 3.5 0 5-3.1 6.1-6 6.5 0.5 0.4 0.9 1.2 0.9 2.4 0 1.8 0 3.7 0 3.7H28V0z"></path>
+</svg>
+ GitHub
+      </a>
+    </li>
+  </ul>
+</aside>
+
+
+    <div class="container">
+  <div class="row">
+    <div id="docs-sidebar" class="col-sm-4 col-md-3 col-xs-12 hidden-print" role="complementary">
+          <ul class="nav docs-sidenav">
+      <li>
+        <a href="/docs/enterprise/free/overview.html">Overview</a>
+      </li>
+
+      <li class="active">
+        <a href="/docs/enterprise/free/index.html">Getting Started</a>
+      </li>
+    </ul>
+
+    </div>
+
+    <div id="inner" class="col-sm-8 col-md-9 col-xs-12" role="main">
+      
+  <h1 id="getting-started-with-the-terraform-enterprise-free-tier">
+  <a name="getting-started-with-the-terraform-enterprise-free-tier" class="anchor" href="#getting-started-with-the-terraform-enterprise-free-tier">&raquo;</a>
+  Getting Started with the Terraform Enterprise Free Tier
+</h1>
+<p>Welcome to the closed beta of the Terraform Enterprise Free Tier! This service enhances your team&#39;s CLI-based Terraform workflow with easy access to shared Terraform state.</p>
+<p>Your free account allows you to share unlimited workspaces with an unlimited number of teammates.</p>
+<h2 id="summary">
+  <a name="summary" class="anchor" href="#summary">&raquo;</a>
+  Summary
+</h2>
+<p>To begin using Terraform Enterprise for state storage, do the following steps:</p>
+
+<ol>
+<li>Upgrade Terraform to 0.11.13 or later.
+</li>
+<li>Create (or join) an organization, and optionally add other users to it.
+</li>
+<li>Configure credentials for Terraform to use.
+</li>
+<li>Update your Terraform configurations to use remote workspaces.
+</li>
+<li>Re-run <code>terraform init</code>, then Terraform as normal.
+</li>
+</ol>
+<h2 id="prerequisite-get-beta-access">
+  <a name="prerequisite-get-beta-access" class="anchor" href="#prerequisite-get-beta-access">&raquo;</a>
+  Prerequisite: Get Beta Access
+</h2>
+<p>Currently, only users who have been added to the beta can create free organizations. You should have already received an invite link and instructions. If you haven&#39;t already created a user account, please create one using the email address on your invitation.</p>
+<p>If you aren&#39;t participating in the beta, you were probably sent here by a beta participant who added you to their organization. You can ignore the instructions about creating an organization.</p>
+<h2 id="upgrade-to-terraform-0-11-13-or-later">
+  <a name="upgrade-to-terraform-0-11-13-or-later" class="anchor" href="#upgrade-to-terraform-0-11-13-or-later">&raquo;</a>
+  Upgrade to Terraform 0.11.13 or later
+</h2>
+<p>The Terraform Enterprise Free Tier requires Terraform 0.11.13 or later. <a href="https://releases.hashicorp.com/terraform/">Upgrade Terraform</a> on any systems where you or your collaborators plan to run Terraform.</p>
+<p>The newest 0.12 preview releases (as of alpha 4) also support the Terraform Enterprise Free Tier.</p>
+<h2 id="create-an-organization">
+  <a name="create-an-organization" class="anchor" href="#create-an-organization">&raquo;</a>
+  Create an Organization
+</h2>
+<p>You can skip this step if you&#39;ve already joined a free organization.</p>
+<p>Log into <a href="https://app.terraform.io">https://app.terraform.io</a>, and go to the new organization page:</p>
+
+<ul>
+<li>New users are automatically taken to the new organization page.
+</li>
+<li>If your user account is already a member of an organization, open the organization switcher menu in the top navigation bar and click the &quot;Create new organization&quot; button.
+</li>
+</ul>
+<p>Enter a unique organization name and an email address for notifications, then click the &quot;Create organization&quot; button.</p>
+<p><img alt="Screenshot: the new organization page" src="../users-teams-organizations/images/org-new-5ff36389.png" /></p>
+<h2 id="add-organization-members">
+  <a name="add-organization-members" class="anchor" href="#add-organization-members">&raquo;</a>
+  Add Organization Members
+</h2>
+<div class="alert alert-warning" role="alert">
+<p><strong>Important:</strong> Members of your organization have the same permissions as you, including the ability to add and remove members. Only invite trusted teammates to your organization.</p>
+</div>
+<p>To add or remove organization members, click the &quot;Settings&quot; link in the top navigation bar, then click &quot;Teams&quot; in the left sidebar.</p>
+<p><img alt="screenshot: the owners team settings page" src="images/free-owners-settings-61c0411b.png" /></p>
+<p>To add a new member, enter their username and click the &quot;Add member&quot; button. You must know someone&#39;s exact username on <code>app.terraform.io</code> to add them to your organization; users cannot be added by email address.</p>
+<p>If the person you want to add doesn&#39;t have an account, ask them to sign up at <code>https://app.terraform.io/account/new</code> and send you their username.</p>
+<p>You can add any <code>app.terraform.io</code> user to your organization, even if they haven&#39;t been invited to the beta. Users outside the beta can only create paid organizations, but they can join any existing organization.</p>
+<h2 id="configure-access-for-the-terraform-cli">
+  <a name="configure-access-for-the-terraform-cli" class="anchor" href="#configure-access-for-the-terraform-cli">&raquo;</a>
+  Configure Access for the Terraform CLI
+</h2>
+<p>Terraform&#39;s CLI needs credentials before it can access Terraform Enterprise. Follow these steps to allow Terraform to access your organization.</p>
+
+<ol>
+<li>Open your <a href="/docs/commands/cli-config.html">Terraform CLI config file</a> in a text editor; create the file if it doesn&#39;t already exist. This file is located at <code>%APPDATA%\terraform.rc</code> on Windows systems, and <code>~/.terraformrc</code> on other systems.
+</li>
+<li><p>Add the following <code>credentials</code> block to the config file:</p>
+<div class="highlight"><pre class="highlight hcl"><code><span class="n">credentials</span> <span class="s2">"app.terraform.io"</span> <span class="p">{</span>
+  <span class="n">token</span> <span class="o">=</span> <span class="s2">"REPLACE_ME"</span>
+<span class="p">}</span>
+</code></pre></div><p>Leave your editor open.</p>
+</li>
+<li><p>In your web browser, go to the tokens section of your user settings. Open <a href="https://app.terraform.io/app/settings/tokens"><code>https://app.terraform.io/app/settings/tokens</code></a>, or click the user icon in the upper right corner, click &quot;User Settings&quot;, then click &quot;Tokens&quot; in the left sidebar.</p>
+</li>
+<li><p>Generate a new token by entering a description and clicking the &quot;Generate token&quot; button. The new token will appear in a text area below the description field.</p>
+</li>
+<li><p>Copy the token to the clipboard.</p>
+</li>
+<li><p>In your text editor, paste the real token into the <code>token</code> argument, replacing the <code>REPLACE_ME</code> placeholder. Save the CLI config file and close your editor.</p>
+<p>At this point, Terraform can use Terraform Enterprise with any Terraform configuration that has enabled the <code>remote</code> backend.</p>
+</li>
+<li><p>Check the CLI config file&#39;s permissions and ensure it can only be viewed by your local user account (<code>0600</code> in traditional Unix permissions notation). Update its permissions if necessary.</p>
+</li>
+</ol>
+<div class="alert alert-warning" role="alert">
+<p><strong>Important:</strong> Anyone with your API token can access Terraform Enterprise with your identity and permissions. Protect it accordingly.</p>
+</div>
+<div class="alert alert-info" role="alert">
+<p><strong>Note:</strong> If you have automated systems that need to run Terraform, they can use the owners team token instead of a human user&#39;s token. To generate this token, go to the &quot;Teams&quot; page of the organization settings and use the token controls at the bottom of the page.</p>
+</div>
+<h2 id="enable-remote-state-in-terraform-configurations">
+  <a name="enable-remote-state-in-terraform-configurations" class="anchor" href="#enable-remote-state-in-terraform-configurations">&raquo;</a>
+  Enable Remote State in Terraform Configurations
+</h2>
+<p>Once Terraform has its credentials, you can update your configurations to use remote state storage. To use remote state, add a <code>terraform { backend &quot;remote&quot; { ... } }</code> block to your configuration and specify which organization and workspace(s) to use.</p>
+<p>For full information about configuring the remote backend, see <a href="/docs/backends/types/remote.html">Backend Type: Remote</a>.</p>
+<h3 id="one-workspace-per-configuration">
+  <a name="one-workspace-per-configuration" class="anchor" href="#one-workspace-per-configuration">&raquo;</a>
+  One Workspace Per Configuration
+</h3>
+<p>For configurations that manage a unique collection of resources, choose one remote workspace to use. Add a block like the following:</p>
+<div class="highlight"><pre class="highlight hcl"><code><span class="n">terraform</span> <span class="p">{</span>
+  <span class="n">backend</span> <span class="s2">"remote"</span> <span class="p">{</span>
+    <span class="n">organization</span> <span class="o">=</span> <span class="s2">"&lt;ORGANIZATION NAME&gt;"</span>
+
+    <span class="n">workspaces</span> <span class="p">{</span>
+      <span class="nb">name</span> <span class="o">=</span> <span class="s2">"&lt;WORKSPACE NAME&gt;"</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>The workspace name is arbitrary, since Terraform Free State Storage creates workspaces on demand; if a workspace with this name doesn&#39;t yet exist, it will be automatically created the next time you run <code>terraform init</code> for that configuration.</p>
+<h3 id="multiple-workspaces-per-configuration">
+  <a name="multiple-workspaces-per-configuration" class="anchor" href="#multiple-workspaces-per-configuration">&raquo;</a>
+  Multiple Workspaces Per Configuration
+</h3>
+<p>If you use <a href="/docs/commands/workspace/index.html">the <code>terraform workspace</code> command</a> to manage multiple sets of resources with this configuration, choose a prefix for its remote workspace names. Add a block like the following:</p>
+<div class="highlight"><pre class="highlight hcl"><code><span class="n">terraform</span> <span class="p">{</span>
+  <span class="n">backend</span> <span class="s2">"remote"</span> <span class="p">{</span>
+    <span class="n">organization</span> <span class="o">=</span> <span class="s2">"&lt;ORGANIZATION NAME&gt;"</span>
+
+    <span class="n">workspaces</span> <span class="p">{</span>
+      <span class="n">prefix</span> <span class="o">=</span> <span class="s2">"&lt;PREFIX STRING&gt;"</span> <span class="c1"># like "app-frontend-"</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>On the CLI you&#39;ll use local names like <code>dev</code> and <code>prod</code>, but the Terraform Enterprise UI will use prefixed names like <code>app-frontend-dev</code> and <code>app-frontend-prod</code>.</p>
+<h2 id="re-init-and-run-terraform">
+  <a name="re-init-and-run-terraform" class="anchor" href="#re-init-and-run-terraform">&raquo;</a>
+  Re-init and Run Terraform
+</h2>
+<p>After you&#39;ve configured the remote backend, run <code>terraform init</code> to reconfigure Terraform and migrate any existing state. Depending on what&#39;s in your working directory, you might need to take additional actions:</p>
+
+<ul>
+<li>If there is already Terraform state for this working directory, Terraform will ask whether to copy it to the new backend. Answer yes.
+</li>
+<li>If you are migrating multiple workspaces and have an un-named <code>default</code> workspace, Terraform will request a new name for it.
+</li>
+<li>If there is no state in the working directory and you configured a prefix for remote workspaces, Terraform will ask you to create a workspace with <code>terraform workspace new &lt;NAME&gt;</code> after the init has finished. (Future users can skip this, since there will be at least one remote workspace already.)
+</li>
+</ul>
+<p>Once <code>terraform init</code> has finished, you can run <code>terraform plan</code> and <code>terraform apply</code> as needed; Terraform will use the remote state to identify resources.</p>
+<p>Be sure to commit your configuration changes, push to your shared version control system, and inform your teammates; they will need to configure credentials before they can run Terraform with the updated configuration. Add your teammates to your Terraform Enterprise organization if you haven&#39;t already.</p>
+<h2 id="collaborate">
+  <a name="collaborate" class="anchor" href="#collaborate">&raquo;</a>
+  Collaborate
+</h2>
+<p>Once a configuration is updated to use remote state, you can use several new collaboration features.</p>
+<h3 id="view-workspaces">
+  <a name="view-workspaces" class="anchor" href="#view-workspaces">&raquo;</a>
+  View Workspaces
+</h3>
+<p>The home page of the Terraform Enterprise UI is a list of all of your organization&#39;s workspaces. Select a workspace for more details and settings.</p>
+<p><img alt="screenshot: the workspace list" src="images/free-workspace-list-a4b8085a.png" /></p>
+<p>To return to the workspaces list from another page, use the &quot;Workspaces&quot; link in the top navigation.</p>
+<h3 id="locking">
+  <a name="locking" class="anchor" href="#locking">&raquo;</a>
+  Locking
+</h3>
+<p>Whenever one organization member is running a Terraform plan or apply, Terraform will prevent other organization members from doing so. Anyone trying to start a new plan or apply will see a message like the following:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>Acquiring state lock. This may take a few moments...
+
+Error: Error locking state: Error acquiring the state lock: workspace already locked
+
+Terraform acquires a state lock to protect the state from being written
+by multiple users at the same time. Please resolve the issue above and try
+again. For most commands, you can disable locking with the "-lock=false"
+flag, but this is not recommended.
+</code></pre></div><p>This makes it easy to avoid conflicting changes and state corruption. You can apply your own changes after the current run ends.</p>
+<p>You can also use the Terraform Enterprise UI to lock a workspace for an indefinite period. Select the workspace from the main workspace list, open its &quot;Settings&quot; menu, and choose &quot;Locking.&quot; Use the lock/unlock button to change the workspace&#39;s lock status.</p>
+<h3 id="view-state-history">
+  <a name="view-state-history" class="anchor" href="#view-state-history">&raquo;</a>
+  View State History
+</h3>
+<p>Terraform Enterprise workspaces preserve their state history, and you can view a list of previous states in the UI.</p>
+<p><img alt="screenshot: a state list" src="images/free-state-list-c63ecdbd.png" /></p>
+<p>The list indicates which user in your organization created each state, and you can get more information by clicking a state. A state detail page includes both a basic view and a diff against the previous state.</p>
+<p><img alt="screenshot: a historical state for a workspace." src="images/free-state-details-d1e402b1.png" /></p>
+<h3 id="delete-workspaces">
+  <a name="delete-workspaces" class="anchor" href="#delete-workspaces">&raquo;</a>
+  Delete Workspaces
+</h3>
+<p>When a workspace is no longer needed, you can delete it from the workspace&#39;s settings menu. To avoid orphaned resources, be sure to <a href="/docs/commands/destroy.html">destroy any managed infrastructure</a> before deleting a workspace.</p>
+
+
+    </div>
+  </div>
+</div>
+
+
+    <div id="footer" class="navigation hidden-print">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <ul class="footer-links nav navbar-nav">
+              <li><a href="/intro/index.html">Intro</a></li>
+              <li><a href="/docs/index.html">Docs</a></li>
+              <li><a href="/docs/extend/index.html">Extend</a></li>
+              <li><a href="https://www.hashicorp.com/privacy">Privacy</a></li>
+              <li><a href="/security.html">Security</a></li>
+              <li><a href="/assets/files/press-kit.zip">Press Kit</a></li>
+            </ul>
+            <ul class="footer-links nav navbar-nav navbar-right">
+              <li><a href="https://github.com/hashicorp/terraform-website">Edit this page</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Product",
+        "name": "Terraform",
+        "alternateName": "Terraform by HashiCorp",
+        "manufacturer": "HashiCorp",
+        "url": "https://www.terraform.io",
+        "logo": "/../../../assets/images/logo-hashicorp-3f10732f.svg",
+        "sameAs": [
+          "https://github.com/hashicorp/terraform"
+        ]
+      }
+    </script>
+  </body>
+</html>
